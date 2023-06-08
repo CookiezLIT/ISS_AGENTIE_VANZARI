@@ -24,7 +24,7 @@
         <mapping class="com.example.iss_vanzari_versiunea2.model.Agent"/>
         <mapping class="com.example.iss_vanzari_versiunea2.model.Manager"/>
         <mapping class="com.example.iss_vanzari_versiunea2.model.Product"/>
-        <mapping class="com.example.iss_vanzari_versiunea2.model.Order"/>
+<!--        <mapping class="com.example.iss_vanzari_versiunea2.model.Order"/>-->
         <mapping class="com.example.iss_vanzari_versiunea2.model.Client"/>
     </session-factory>
 </hibernate-configuration>

@@ -1,9 +1,19 @@
 package com.example.iss_vanzari_versiunea2.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "product")
 public class Product extends Identifiable{
+    @Column(name = "name")
     private String name;
+    @Column(name = "countryOfOrigin")
     private String countryOfOrigin;
+    @Column(name = "quantity")
     private int quantity;
+    @Column(name = "price")
     private float price;
 
 
@@ -12,6 +22,10 @@ public class Product extends Identifiable{
         this.countryOfOrigin = countryOfOrigin;
         this.quantity = quantity;
         this.price = price;
+    }
+
+    public Product() {
+
     }
 
     public String getName() {
