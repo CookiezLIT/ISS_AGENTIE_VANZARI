@@ -42,7 +42,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-design.fxml"));
         Parent root = fxmlLoader.load();
         LoginController loginController = fxmlLoader.getController();
-        loginController.setServices(agentService,managerService); //todo add all services here
+        loginController.setServices(agentService,managerService, productService, clientService);
 
 
 
