@@ -97,7 +97,7 @@ public class Main {
         ManagerRepository managerRepository = new ManagerRepository(sessionFactory);
 
         // Create a new manager
-        Manager manager = new Manager("Jane", "Smith", "987654321", "jane.smith@example.com", "Marketing", "asd", "a");
+        Manager manager = new Manager("Jane", "Smith", "987654321", "jane.smith@example.com", "manager", "manager", "Marketing");
 
         // Save the manager
         managerRepository.save(manager);
@@ -114,8 +114,8 @@ public class Main {
         System.out.println("Updated manager: " + retrievedManager);
 
         // Delete the manager
-        managerRepository.delete(retrievedManager);
-        System.out.println("Deleted manager: " + retrievedManager);
+//        managerRepository.delete(retrievedManager);
+//        System.out.println("Deleted manager: " + retrievedManager);
 
         // Find all managers
         List<Manager> allManagers = managerRepository.findAll();

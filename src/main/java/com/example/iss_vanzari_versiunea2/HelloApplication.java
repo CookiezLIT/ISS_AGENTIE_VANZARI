@@ -42,7 +42,9 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("login-design.fxml"));
         Parent root = fxmlLoader.load();
         LoginController loginController = fxmlLoader.getController();
-        loginController.setServices(agentService,managerService);
+        loginController.setServices(agentService,managerService); //todo add all services here
+
+
 
         Scene scene = new Scene(root, 600, 400);
         stage.setTitle("Welcome to the Sales App!");
