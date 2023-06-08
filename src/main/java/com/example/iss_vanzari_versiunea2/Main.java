@@ -86,9 +86,9 @@ public class Main {
         productRepository.save(product1);
         System.out.println("Product updated: " + product1);
 
-        // Delete the product
-        productRepository.delete(product1);
-        System.out.println("Product deleted: " + product1);
+//        // Delete the product
+//        productRepository.delete(product1);
+//        System.out.println("Product deleted: " + product1);
 
 
         // TEST FOR MANAGER

@@ -36,7 +36,7 @@ public class ClientRepository implements IRepository<Client> {
     @Override
     public List<Client> findAll() {
         Session session = sessionFactory.openSession();
-        List<Client> agents = session.createQuery("SELECT * FROM Client", Client.class).list();
+        List<Client> agents = session.createQuery("FROM Client", Client.class).list();
         session.close();
         return agents;
     }
