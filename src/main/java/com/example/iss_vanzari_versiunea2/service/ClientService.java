@@ -14,7 +14,7 @@ public class ClientService {
     }
 
     public Client saveClient(String firstName, String lastName, String phoneNumber, String emailAddress, String company, String deliveryAddress) {
-        Client client = new Client(firstName,lastName,phoneNumber,emailAddress,company,deliveryAddress);
+        Client client = new Client(firstName, lastName, phoneNumber, emailAddress, company, deliveryAddress);
         return clientRepository.save(client);
     }
 

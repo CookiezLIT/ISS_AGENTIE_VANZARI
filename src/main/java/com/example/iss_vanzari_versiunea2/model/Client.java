@@ -1,4 +1,5 @@
 package com.example.iss_vanzari_versiunea2.model;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;

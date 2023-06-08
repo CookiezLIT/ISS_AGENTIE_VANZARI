@@ -1,12 +1,10 @@
 package com.example.iss_vanzari_versiunea2.controller;
 
 
-import com.example.iss_vanzari_versiunea2.model.Agent;
 import com.example.iss_vanzari_versiunea2.model.Client;
 import com.example.iss_vanzari_versiunea2.model.Product;
 import com.example.iss_vanzari_versiunea2.service.AgentService;
 import com.example.iss_vanzari_versiunea2.service.ClientService;
-
 import com.example.iss_vanzari_versiunea2.service.ProductService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -104,10 +102,9 @@ public class EmployeeController implements Initializable {
                 if (selectedProduct == null) {
                     showAlert(Alert.AlertType.ERROR, "No Product Selected", "Please select a product.");
                 } else {
-                    if (selectedProduct.getQuantity() < quantity){
+                    if (selectedProduct.getQuantity() < quantity) {
                         showAlert(Alert.AlertType.ERROR, "Not Enough Quanity", "Not enough quantity available.");
-                    }
-                    else{
+                    } else {
                         productService.deleteProductById(selectedProduct.getId());
                         selectedProduct.setQuantity(selectedProduct.getQuantity() - quantity);
                         productService.saveProductObject(selectedProduct);
@@ -134,7 +131,7 @@ public class EmployeeController implements Initializable {
         // Perform necessary operations to add a client
         // For example, create a new Client object and add it to the client table
 
-        clientService.saveClient(firstName,lastName,phone,email,company,deliveryAddress);
+        clientService.saveClient(firstName, lastName, phone, email, company, deliveryAddress);
         load_clients();
 
         // Clear the input fields
@@ -164,7 +161,7 @@ public class EmployeeController implements Initializable {
         load_products();
     }
 
-    public void load_products(){
+    public void load_products() {
         // Retrieve the list of employees from the agent service
         ObservableList<Product> products = FXCollections.observableArrayList(productService.getAllProducts());
 
@@ -174,12 +171,11 @@ public class EmployeeController implements Initializable {
         pcolumn4.setCellValueFactory(new PropertyValueFactory<Product, Float>("price"));
 
 
-
         // Set the items in the table view
         productsTable.setItems(products);
     }
 
-    public void load_clients(){
+    public void load_clients() {
 
         // Retrieve the list of employees from the agent service
         ObservableList<Client> clients = FXCollections.observableArrayList(clientService.findAllClients());
@@ -190,12 +186,11 @@ public class EmployeeController implements Initializable {
         ccolumn4.setCellValueFactory(new PropertyValueFactory<Client, String>("deliveryAddress"));
 
 
-
         // Set the items in the table view
         clientTable.setItems(clients);
     }
 
-    public void setServices(AgentService as, ProductService ps, ClientService cs){
+    public void setServices(AgentService as, ProductService ps, ClientService cs) {
         this.agentService = as;
         this.productService = ps;
         this.clientService = cs;

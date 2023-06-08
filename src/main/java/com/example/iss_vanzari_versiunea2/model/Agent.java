@@ -6,13 +6,14 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "agent")
-public class Agent extends Employee{
+public class Agent extends Employee {
     @Column(name = "yearsInCompany")
     private int yearsInCompany;
 
-    public Agent(){
+    public Agent() {
         super();
     }
+
     public Agent(String firstName, String lastName, String phoneNumber, String emailAddress, String username, String password, int yearsInCompany) {
         super(firstName, lastName, phoneNumber, emailAddress, username, password);
         this.yearsInCompany = yearsInCompany;

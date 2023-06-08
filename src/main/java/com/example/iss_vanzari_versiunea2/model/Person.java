@@ -1,8 +1,9 @@
 package com.example.iss_vanzari_versiunea2.model;
+
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
-public abstract class Person extends Identifiable{
+public abstract class Person extends Identifiable {
 
     private String firstName;
     private String lastName;

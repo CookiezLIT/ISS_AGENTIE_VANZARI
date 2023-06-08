@@ -1,7 +1,6 @@
 package com.example.iss_vanzari_versiunea2.controller;
 
 import com.example.iss_vanzari_versiunea2.HelloApplication;
-import com.example.iss_vanzari_versiunea2.repository.ManagerRepository;
 import com.example.iss_vanzari_versiunea2.service.AgentService;
 import com.example.iss_vanzari_versiunea2.service.ClientService;
 import com.example.iss_vanzari_versiunea2.service.ManagerService;
@@ -43,11 +42,11 @@ public class LoginController {
         String name = nameTextField.getText();
         String password = passwordField.getText();
 
-        if (agentService.logAgent(name, password)){
+        if (agentService.logAgent(name, password)) {
             System.out.println("LOGGED IN AGENT!");
             // launch agent window
             showEmployeeView();
-        } else if (managerService.logManager(name,password)) {
+        } else if (managerService.logManager(name, password)) {
             System.out.println("LOGGED IN MANAGER!");
             //launch manager window
             showManagerView();
@@ -61,7 +60,7 @@ public class LoginController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("employee-view.fxml"));
 
         EmployeeController employeeController = new EmployeeController();
-        employeeController.setServices(agentService,productService, clientService);
+        employeeController.setServices(agentService, productService, clientService);
         fxmlLoader.setController(employeeController);
         Parent root = fxmlLoader.load();
 
@@ -76,7 +75,7 @@ public class LoginController {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("manager-view.fxml"));
 
         ManagerController managerController = new ManagerController();
-        managerController.setServices(agentService,managerService);
+        managerController.setServices(agentService, managerService);
         fxmlLoader.setController(managerController);
         Parent root = fxmlLoader.load();
 
@@ -87,7 +86,7 @@ public class LoginController {
         stage.show();
     }
 
-    public void setServices(AgentService as, ManagerService ms, ProductService ps, ClientService cs){
+    public void setServices(AgentService as, ManagerService ms, ProductService ps, ClientService cs) {
         this.agentService = as;
         this.managerService = ms;
         this.productService = ps;

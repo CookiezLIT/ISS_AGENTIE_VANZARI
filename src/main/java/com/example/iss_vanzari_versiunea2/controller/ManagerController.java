@@ -3,22 +3,20 @@ package com.example.iss_vanzari_versiunea2.controller;
 import com.example.iss_vanzari_versiunea2.model.Agent;
 import com.example.iss_vanzari_versiunea2.service.AgentService;
 import com.example.iss_vanzari_versiunea2.service.ManagerService;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
-import javafx.fxml.Initializable;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class ManagerController implements Initializable{
+public class ManagerController implements Initializable {
 
     private AgentService agentService;
     private ManagerService managerService;
@@ -50,13 +48,13 @@ public class ManagerController implements Initializable{
     private Button removeEmployeeButton;
 
     @FXML
-    private TableView<Agent>employeeTableView;
+    private TableView<Agent> employeeTableView;
 
     @FXML
     private TableColumn<Agent, String> column1;
 
     @FXML
-    private TableColumn<Agent, String>column2;
+    private TableColumn<Agent, String> column2;
 
     @FXML
     private TableColumn<Agent, String> column3;
@@ -68,23 +66,23 @@ public class ManagerController implements Initializable{
     private TableColumn<Agent, Integer> column5;
 
 
-    public void setServices(AgentService as, ManagerService ms){
+    public void setServices(AgentService as, ManagerService ms) {
         this.agentService = as;
         this.managerService = ms;
     }
 
-    public void addEmployee(){
+    public void addEmployee() {
         String first_name = nameTextField.getText();
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
         String last_name = lastNameTextField.getText();
         String phone = phoneTextField.getText();
         String email = emailTextField.getText();
-        agentService.saveAgent(first_name,last_name,phone,email,username,password,0);
+        agentService.saveAgent(first_name, last_name, phone, email, username, password, 0);
         loadEmployees();
     }
 
-    public void deleteEmployee(){
+    public void deleteEmployee() {
         // Get the selected employee from the table
         Agent selectedEmployee = employeeTableView.getSelectionModel().getSelectedItem();
         if (selectedEmployee != null) {

@@ -1,9 +1,7 @@
 package com.example.iss_vanzari_versiunea2.service;
 
 import com.example.iss_vanzari_versiunea2.model.Agent;
-import com.example.iss_vanzari_versiunea2.model.Product;
 import com.example.iss_vanzari_versiunea2.repository.AgentRepository;
-import com.example.iss_vanzari_versiunea2.repository.ProductRepository;
 
 import java.util.List;
 import java.util.Objects;
@@ -29,11 +27,11 @@ public class AgentService {
         return agentRepository.findAll();
     }
 
-    public boolean logAgent(String username, String password){
+    public boolean logAgent(String username, String password) {
         List<Agent> agents = agentRepository.findAll();
 
-        for (Agent a : agents){
-            if (Objects.equals(a.getUsername(), username) && Objects.equals(a.getPassword(), password)){
+        for (Agent a : agents) {
+            if (Objects.equals(a.getUsername(), username) && Objects.equals(a.getPassword(), password)) {
                 return true;
             }
         }
@@ -51,10 +49,9 @@ public class AgentService {
         }
     }
 
-    public void deleteById(long id){
+    public void deleteById(long id) {
         agentRepository.delete(agentRepository.findById(id));
     }
-
 
 
 }

@@ -18,7 +18,7 @@ public class ProductService {
         return productRepository.save(product);
     }
 
-    public Product saveProductObject(Product p){
+    public Product saveProductObject(Product p) {
         return productRepository.save(p);
     }
 

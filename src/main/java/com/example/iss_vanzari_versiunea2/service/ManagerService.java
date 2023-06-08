@@ -1,4 +1,5 @@
 package com.example.iss_vanzari_versiunea2.service;
+
 import com.example.iss_vanzari_versiunea2.model.Manager;
 import com.example.iss_vanzari_versiunea2.repository.ManagerRepository;
 
@@ -36,11 +37,11 @@ public class ManagerService {
         }
     }
 
-    public boolean logManager(String username, String password){
+    public boolean logManager(String username, String password) {
         List<Manager> managers = managerRepository.findAll();
 
-        for (Manager a : managers){
-            if (Objects.equals(a.getUsername(), username) && Objects.equals(a.getPassword(), password)){
+        for (Manager a : managers) {
+            if (Objects.equals(a.getUsername(), username) && Objects.equals(a.getPassword(), password)) {
                 return true;
             }
         }
