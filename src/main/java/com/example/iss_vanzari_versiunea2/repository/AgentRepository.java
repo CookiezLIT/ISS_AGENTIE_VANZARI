@@ -4,6 +4,7 @@ import com.example.iss_vanzari_versiunea2.model.Agent;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -48,6 +49,16 @@ public class AgentRepository implements IRepository<Agent> {
         session.delete(agent);
         transaction.commit();
         session.close();
+    }
+
+
+    public Agent findByName(String name) {
+        Session session = sessionFactory.openSession();
+        Query<Agent> query = session.createQuery("FROM Agent WHERE name = :name", Agent.class);
+        query.setParameter("name", name);
+        Agent agent = query.uniqueResult();
+        session.close();
+        return agent;
     }
 
 }

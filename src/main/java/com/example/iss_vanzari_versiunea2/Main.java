@@ -8,7 +8,6 @@ import com.example.iss_vanzari_versiunea2.repository.AgentRepository;
 import com.example.iss_vanzari_versiunea2.repository.ClientRepository;
 import com.example.iss_vanzari_versiunea2.repository.ManagerRepository;
 import com.example.iss_vanzari_versiunea2.repository.ProductRepository;
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 

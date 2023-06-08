@@ -4,6 +4,7 @@ import com.example.iss_vanzari_versiunea2.model.Product;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -48,6 +49,15 @@ public class ProductRepository implements IRepository<Product> {
         session.delete(agent);
         transaction.commit();
         session.close();
+    }
+
+    public Product findByName(String name) {
+        Session session = sessionFactory.openSession();
+        Query<Product> query = session.createQuery("FROM Product WHERE name = :name", Product.class);
+        query.setParameter("name", name);
+        Product product = query.uniqueResult();
+        session.close();
+        return product;
     }
 
 }
