@@ -11,7 +11,10 @@ import java.util.Objects;
 public class AgentService {
 
     private AgentRepository agentRepository;
-    private ProductRepository productRepository;
+
+    public AgentService(AgentRepository agentRepository) {
+        this.agentRepository = agentRepository;
+    }
 
     public Agent saveAgent(String firstName, String lastName, String phoneNumber, String emailAddress, String username, String password, int years) {
         Agent agent = new Agent(firstName, lastName, phoneNumber, emailAddress, username, password, years);

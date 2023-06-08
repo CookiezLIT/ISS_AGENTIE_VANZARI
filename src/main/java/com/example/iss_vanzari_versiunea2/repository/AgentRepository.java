@@ -37,7 +37,7 @@ public class AgentRepository implements IRepository<Agent> {
     @Override
     public List<Agent> findAll() {
         Session session = sessionFactory.openSession();
-        List<Agent> agents = session.createQuery("SELECT * FROM Agent", Agent.class).list();
+        List<Agent> agents = session.createQuery("FROM Agent", Agent.class).list();
         session.close();
         return agents;
     }

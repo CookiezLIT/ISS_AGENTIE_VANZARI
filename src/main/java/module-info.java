@@ -12,5 +12,7 @@ module com.example.iss_vanzari_versiunea2 {
     exports com.example.iss_vanzari_versiunea2;
     exports com.example.iss_vanzari_versiunea2.model;
     exports com.example.iss_vanzari_versiunea2.repository;
+    exports com.example.iss_vanzari_versiunea2.controller;
+    opens com.example.iss_vanzari_versiunea2.controller to javafx.fxml;
 
 }
