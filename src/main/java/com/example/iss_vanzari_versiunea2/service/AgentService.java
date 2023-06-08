@@ -51,6 +51,9 @@ public class AgentService {
         }
     }
 
+    public void deleteById(long id){
+        agentRepository.delete(agentRepository.findById(id));
+    }
 
 
 

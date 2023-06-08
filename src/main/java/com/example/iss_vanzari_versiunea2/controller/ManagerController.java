@@ -27,6 +27,17 @@ public class ManagerController implements Initializable{
     private TextField nameTextField;
 
     @FXML
+    private TextField lastNameTextField;
+
+
+    @FXML
+    private TextField phoneTextField;
+
+
+    @FXML
+    private TextField emailTextField;
+
+    @FXML
     private TextField usernameTextField;
 
     @FXML
@@ -62,6 +73,29 @@ public class ManagerController implements Initializable{
         this.managerService = ms;
     }
 
+    public void addEmployee(){
+        String first_name = nameTextField.getText();
+        String username = usernameTextField.getText();
+        String password = passwordTextField.getText();
+        String last_name = lastNameTextField.getText();
+        String phone = phoneTextField.getText();
+        String email = emailTextField.getText();
+        agentService.saveAgent(first_name,last_name,phone,email,username,password,0);
+        loadEmployees();
+    }
+
+    public void deleteEmployee(){
+        // Get the selected employee from the table
+        Agent selectedEmployee = employeeTableView.getSelectionModel().getSelectedItem();
+        if (selectedEmployee != null) {
+            // Delete the selected employee using the agent service
+            agentService.deleteById(selectedEmployee.getId());
+
+            // Refresh the table view
+            loadEmployees();
+        }
+    }
+
     public void loadEmployees() {
         // Retrieve the list of employees from the agent service
         ObservableList<Agent> employees = FXCollections.observableArrayList(agentService.getAllAgents());
@@ -80,5 +114,13 @@ public class ManagerController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadEmployees();
+
+        addEmployeeButton.setOnAction(event -> {
+            addEmployee();
+        });
+
+        removeEmployeeButton.setOnAction(event -> {
+            deleteEmployee();
+        });
     }
 }

@@ -7,26 +7,31 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="519.0" prefWidth="639.0" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="900.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/19">
    <children>
-      <TextField layoutX="122.0" layoutY="74.0" fx:id="nameTextField"/>
-      <TextField layoutX="122.0" layoutY="152.0" fx:id="usernameTextField"/>
-      <TextField layoutX="122.0" layoutY="115.0" fx:id="passwordTextField"/>
-      <Button layoutX="122.0" layoutY="200.0" mnemonicParsing="false" text="Add Employee" fx:id="addEmployeeButton" onAction="#loadEmployees"/>
-      <Button layoutX="246.0" layoutY="200.0" mnemonicParsing="false" text="Remove Employee" fx:id="removeEmployeeButton"/>
-      <TableView layoutX="113.0" layoutY="251.0" prefHeight="400.0" prefWidth="600.0" fx:id="employeeTableView">
+      <TextField fx:id="nameTextField" layoutX="122.0" layoutY="74.0" />
+      <TextField fx:id="usernameTextField" layoutX="122.0" layoutY="152.0" />
+      <TextField fx:id="passwordTextField" layoutX="122.0" layoutY="115.0" />
+      <Button fx:id="addEmployeeButton" layoutX="122.0" layoutY="200.0" mnemonicParsing="false" text="Add Employee" />
+      <Button fx:id="removeEmployeeButton" layoutX="246.0" layoutY="200.0" mnemonicParsing="false" text="Remove Employee" />
+      <TableView fx:id="employeeTableView" layoutX="113.0" layoutY="251.0" prefHeight="400.0" prefWidth="600.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="First Name" fx:id="column1"/>
+          <TableColumn fx:id="column1" prefWidth="75.0" text="First Name" />
 
-          <TableColumn prefWidth="75.0" text="Last Name" fx:id="column2"/>
-            <TableColumn prefWidth="75.0" text="phoneNumber" fx:id="column3"/>
-            <TableColumn prefWidth="75.0" text="emailAddress" fx:id="column4"/>
-            <TableColumn prefWidth="75.0" text="yearsInCompany" fx:id="column5"/>
+          <TableColumn fx:id="column2" prefWidth="75.0" text="Last Name" />
+            <TableColumn fx:id="column3" prefWidth="75.0" text="phoneNumber" />
+            <TableColumn fx:id="column4" prefWidth="75.0" text="emailAddress" />
+            <TableColumn fx:id="column5" prefWidth="75.0" text="yearsInCompany" />
         </columns>
       </TableView>
-      <Label layoutX="43.0" layoutY="79.0" text="Name" />
+      <Label layoutX="43.0" layoutY="79.0" text="First Name" />
       <Label layoutX="43.0" layoutY="120.0" text="Username" />
       <Label layoutX="43.0" layoutY="157.0" text="Password" />
+      <TextField fx:id="lastNameTextField" layoutX="333.0" layoutY="75.0" />
+      <TextField fx:id="phoneTextField" layoutX="333.0" layoutY="124.0" />
+      <TextField fx:id="emailTextField" layoutX="333.0" layoutY="161.0" />
+      <Label layoutX="525.0" layoutY="79.0" text="Last Name" />
+      <Label layoutX="525.0" layoutY="120.0" text="Phone Number" />
+      <Label layoutX="525.0" layoutY="166.0" text="Email" />
    </children>
 </AnchorPane>
